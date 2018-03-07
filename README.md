@@ -1,5 +1,3 @@
-# Init mvn project
+# A simple Java EE and JPa showcase
 
-`mvn archetype:generate`
-
-mvn-archetype-web
+Please look at commit history to see the stepwise progress
