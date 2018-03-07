@@ -2,9 +2,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 >
 <h:head/>
 <h:body>
-    <h2>Hello World!</h2>
+    <h2>Authors:</h2>
+    <ol>
+        <ui:repeat value="#{authors.allAuthors}" var="author">
+            <li>#{author.name}</li>
+        </ui:repeat>
+    </ol>
 </h:body>
 </html>
