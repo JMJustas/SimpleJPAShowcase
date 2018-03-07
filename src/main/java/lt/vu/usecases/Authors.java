@@ -1,14 +1,17 @@
 package lt.vu.usecases;
 
 import lt.vu.entities.Author;
+import lt.vu.persistence.AuthorsDAO;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
-import java.util.ArrayList;
+import javax.inject.Inject;
 import java.util.List;
 
 @Model
 public class Authors {
+    @Inject
+    private AuthorsDAO authorsDAO;
     private List<Author> allAuthors;
 
     @PostConstruct
@@ -17,11 +20,7 @@ public class Authors {
     }
 
     private void loadAuthors() {
-        // TODO this is a mock implementation - later we will connect it to real data store
-        List<Author> authors = new ArrayList<Author>();
-        authors.add(new Author("Author1"));
-        authors.add(new Author("Author2"));
-        this.allAuthors = authors;
+        this.allAuthors = authorsDAO.loadAll();
     }
 
 
