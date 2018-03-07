@@ -16,7 +16,7 @@ public class AuthorsDAO {
         return em.createNamedQuery("Author.findAll", Author.class).getResultList();
     }
 
-    public void setEm(EntityManager em) {
-        this.em = em;
+    public void save(Author author) {
+        this.em.persist(author);
     }
 }

@@ -12,5 +12,9 @@
             <li>#{author.name}</li>
         </ui:repeat>
     </ol>
+    <h:form>
+        <h:inputText value="#{authors.newAuthor.name}" required="true" />
+        <h:commandButton value="Add new author" action="#{authors.createNewAuthor}" />
+    </h:form>
 </h:body>
 </html>
