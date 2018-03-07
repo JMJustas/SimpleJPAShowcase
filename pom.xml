@@ -30,6 +30,12 @@
             <classifier>javadoc</classifier>
             <scope>provided</scope>
         </dependency>
+        <!--h2 database-->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.195</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>jpa-basic</finalName>
