@@ -8,11 +8,20 @@
     <name>jpa-basic Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <!-- Java EE 7 API -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Java EE 7 JavaDoc -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <classifier>javadoc</classifier>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <build>
