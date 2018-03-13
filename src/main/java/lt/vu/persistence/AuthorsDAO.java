@@ -3,13 +3,14 @@ package lt.vu.persistence;
 import lt.vu.entities.Author;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @ApplicationScoped
 public class AuthorsDAO {
-    @PersistenceContext
+    @Inject
     private EntityManager em;
 
     public List<Author> loadAll() {
