@@ -3,7 +3,6 @@
     <persistence-unit name="BooksPU" transaction-type="JTA">
         <jta-data-source>BooksDataSource</jta-data-source>
         <properties>
-            <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
             <property name="hibernate.hbm2ddl.auto" value="validate"/>
         </properties>
     </persistence-unit>

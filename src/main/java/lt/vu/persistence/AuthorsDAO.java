@@ -5,7 +5,6 @@ import lt.vu.entities.Author;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @ApplicationScoped
@@ -15,6 +14,10 @@ public class AuthorsDAO {
 
     public List<Author> loadAll() {
         return em.createNamedQuery("Author.findAll", Author.class).getResultList();
+    }
+
+    public Author findOne(Integer id) {
+        return em.find(Author.class, id);
     }
 
     public void save(Author author) {
