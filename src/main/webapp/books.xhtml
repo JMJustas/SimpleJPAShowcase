@@ -19,7 +19,7 @@
         <h:inputText a:placeholder="isbn" value="#{booksForAuthor.newBook.isbn}" required="true" >
             <f:validateLength minimum="13" maximum="13" />
         </h:inputText>
-        <h:commandButton value="Add new author" action="#{booksForAuthor.createBook}" >
+        <h:commandButton value="Add new book" action="#{booksForAuthor.createBook}" >
             <f:param name="authorId" value="#{booksForAuthor.author.id}" />
         </h:commandButton>
     </h:form>
