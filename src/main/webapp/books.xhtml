@@ -8,5 +8,10 @@
 <h:head/>
 <h:body>
     <h2>Books written by #{booksForAuthor.author.name}:</h2>
+    <ol>
+        <ui:repeat value="#{booksForAuthor.author.books}" var="book">
+            <li>#{book.title}</li>
+        </ui:repeat>
+    </ol>
 </h:body>
 </html>

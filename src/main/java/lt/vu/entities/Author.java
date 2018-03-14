@@ -3,6 +3,7 @@ package lt.vu.entities;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -25,6 +26,9 @@ public class Author implements Serializable {
     @Size(max = 50)
     @Column(name = "NAME")
     private String name;
+
+    @OneToMany(mappedBy = "author")
+    private List<Book> books;
 
     @Override
     public boolean equals(Object o) {
@@ -53,5 +57,13 @@ public class Author implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 }
