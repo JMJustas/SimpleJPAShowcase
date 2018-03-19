@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="lt.vu.usecases.mybatis.model.Author" alias="Author"/>
-        <typeAlias type="lt.vu.usecases.mybatis.model.Book" alias="Book"/>
+        <typeAlias type="lt.vu.mybatis.model.Author" alias="Author"/>
+        <typeAlias type="lt.vu.mybatis.model.Book" alias="Book"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -16,7 +16,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mybatis/xml/AuthorMapper.xml"/>
-        <mapper resource="mybatis/xml/BookMapper.xml"/>
+        <mapper resource="mybatis.xml/AuthorMapper.xml"/>
+        <mapper resource="mybatis.xml/BookMapper.xml"/>
     </mappers>
 </configuration>

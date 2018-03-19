@@ -8,13 +8,13 @@
 <h:body>
     <h2>Authors:</h2>
     <ol>
-        <ui:repeat value="#{authors.allAuthors}" var="author">
+        <ui:repeat value="#{authorsMyBatis.allAuthors}" var="author">
            <li><h:link value="#{author.name}" outcome="books?authorId=#{author.id}" /></li>
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText value="#{authors.newAuthor.name}" required="true" />
-        <h:commandButton value="Add new author" action="#{authors.createNewAuthor}" />
+        <h:inputText value="#{authorsMyBatis.newAuthor.name}" required="true" />
+        <h:commandButton value="Add new author" action="#{authorsMyBatis.createNewAuthor}" />
     </h:form>
 </h:body>
 </html>
