@@ -37,7 +37,7 @@ public class BooksForAuthor {
     public String createBook() {
         newBook.setAuthor(this.author);
         booksDAO.save(newBook);
-        return "/books.xhtml?faces-redirect=true&authorId=" + this.author.getId();
+        return "/mybatis/books.xhtml?faces-redirect=true&authorId=" + this.author.getId();
     }
 
     public Author getAuthor() {

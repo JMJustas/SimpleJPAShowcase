@@ -31,7 +31,7 @@ public class AuthorsMyBatis {
     @Transactional
     public String createNewAuthor() {
         authorMapper.insert(newAuthor);
-        return "success";
+        return "/mybatis/authors?faces-redirect=true";
     }
 
     public List<Author> getAllAuthors() {

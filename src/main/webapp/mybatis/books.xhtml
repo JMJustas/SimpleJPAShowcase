@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+<h:head/>
+<h:body>
+    <h2>Books written by #{booksForAuthor.author.name}:</h2>
+    <ol>
+        <ui:repeat value="#{booksForAuthor.author.books}" var="book">
+            <li>#{book.title}</li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="title" value="#{booksForAuthor.newBook.title}" required="true" />
+        <h:inputText a:placeholder="isbn" value="#{booksForAuthor.newBook.isbn}" required="true" >
+            <f:validateLength minimum="13" maximum="13" />
+        </h:inputText>
+        <h:commandButton value="Add new book" action="#{booksForAuthor.createBook}" >
+            <f:param name="authorId" value="#{booksForAuthor.author.id}" />
+        </h:commandButton>
+    </h:form>
+    <h:link value="Back to authors list" outcome="/mybatis/authors"/>
+</h:body>
+</html>
