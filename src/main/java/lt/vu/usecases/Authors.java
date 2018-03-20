@@ -25,7 +25,7 @@ public class Authors {
     @Transactional
     public String createNewAuthor() {
         authorsDAO.save(newAuthor);
-        return "success"; // Why this should not be here? How could this be solved?
+        return "index?faces-redirect=true";
     }
 
     private void loadAuthors() {

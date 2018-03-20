@@ -11,7 +11,7 @@
     <h2>Books written by #{booksForAuthor.author.name}:</h2>
     <ol>
         <ui:repeat value="#{booksForAuthor.author.books}" var="book">
-            <li>#{book.title}</li>
+            <li>#{book.title} #{book.isbn}</li>
         </ui:repeat>
     </ol>
     <h:form>
@@ -19,9 +19,10 @@
         <h:inputText a:placeholder="isbn" value="#{booksForAuthor.newBook.isbn}" required="true" >
             <f:validateLength minimum="13" maximum="13" />
         </h:inputText>
-        <h:commandButton value="Add new book" action="#{booksForAuthor.createBook}" >
+        <h:commandButton value="Add new book" action="#{booksForAuthor.createBook()}">
             <f:param name="authorId" value="#{booksForAuthor.author.id}" />
         </h:commandButton>
     </h:form>
+    <h:link outcome="index" value="Back to home page"/>
 </h:body>
 </html>
