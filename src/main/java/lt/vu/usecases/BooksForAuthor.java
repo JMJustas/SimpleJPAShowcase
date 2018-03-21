@@ -35,6 +35,7 @@ public class BooksForAuthor {
 
     @Transactional
     public String createBook() {
+        //TODO what if this book already exists??? ;)
         newBook.setAuthor(this.author);
         booksDAO.save(newBook);
         return "/mybatis/books.xhtml?faces-redirect=true&authorId=" + this.author.getId();

@@ -13,7 +13,7 @@ import javax.persistence.SynchronizationType;
 @ApplicationScoped
 public class Resources {
 
-    @PersistenceUnit
+    @PersistenceUnit(name = "BooksPU")
     private EntityManagerFactory emf;
 
     @Produces
