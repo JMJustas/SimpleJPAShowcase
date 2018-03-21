@@ -36,8 +36,44 @@
             <artifactId>h2</artifactId>
             <version>1.4.195</version>
         </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-cdi</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.5</version>
+                <configuration>
+                    <contexts>BooksDB</contexts>
+                    <verbose>true</verbose>
+                </configuration>
+                <executions>
+                <execution>
+                <id>Generate MyBatis Artifacts</id>
+                <goals>
+                <goal>generate</goal>
+                </goals>
+                </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>1.4.195</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
         <finalName>jpa-basic</finalName>
     </build>
 </project>

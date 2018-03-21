@@ -38,7 +38,7 @@ public class BooksForAuthor {
         //TODO what if this book already exists??? ;)
         newBook.setAuthor(this.author);
         booksDAO.save(newBook);
-        return "books?faces-redirect=true&authorId=" + this.author.getId();
+        return "/mybatis/books.xhtml?faces-redirect=true&authorId=" + this.author.getId();
     }
 
     public Author getAuthor() {
