@@ -31,6 +31,10 @@ public class Author implements Serializable {
     @Column(name = "NICKNAME")
     private String nickname;
 
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
     @OneToMany(mappedBy = "author")
     private List<Book> books;
 
@@ -77,5 +81,13 @@ public class Author implements Serializable {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 }
