@@ -23,4 +23,8 @@ public class AuthorsDAO {
     public void save(Author author) {
         this.em.persist(author);
     }
+
+    public Author update(Author author) {
+        return em.merge(author);
+    }
 }
