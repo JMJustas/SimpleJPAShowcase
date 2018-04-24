@@ -27,6 +27,10 @@ public class Author implements Serializable {
     @Column(name = "NAME")
     private String name;
 
+    @Size(max = 50)
+    @Column(name = "NICKNAME")
+    private String nickname;
+
     @OneToMany(mappedBy = "author")
     private List<Book> books;
 
@@ -65,5 +69,13 @@ public class Author implements Serializable {
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }
