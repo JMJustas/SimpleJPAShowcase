@@ -1,6 +1,7 @@
 package lt.vu.usecases;
 
 import lt.vu.entities.Author;
+import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.persistence.AuthorsDAO;
 
 import javax.annotation.PostConstruct;
@@ -24,7 +25,6 @@ public class UpdateAuthorNickname implements Serializable {
 
     @PostConstruct
     private void init() {
-        System.out.println("UpdateAuthorNickname INIT CALLED");
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         Integer authorId = Integer.parseInt(requestParameters.get("authorId"));
@@ -32,6 +32,7 @@ public class UpdateAuthorNickname implements Serializable {
     }
 
     @Transactional
+    @LoggedInvocation
     public String updateAuthorNickname() {
         try{
             authorsDAO.update(this.author);
