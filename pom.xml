@@ -12,7 +12,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <deltaspike.version>1.7.2</deltaspike.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.deltaspike.distribution</groupId>
+                <artifactId>distributions-bom</artifactId>
+                <version>${deltaspike.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <!-- Java EE 7 API -->
@@ -36,15 +49,28 @@
             <artifactId>h2</artifactId>
             <version>1.4.195</version>
         </dependency>
+        <!--MYBATIS-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.4</version>
         </dependency>
+        <!--MYBATIS CDI integration-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-cdi</artifactId>
             <version>1.0.0</version>
+        </dependency>
+        <!-- DeltaSpike CORE -->
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.core</groupId>
+            <artifactId>deltaspike-core-impl</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
     <build>

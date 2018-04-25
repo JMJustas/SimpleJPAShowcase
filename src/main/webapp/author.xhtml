@@ -16,6 +16,12 @@
         </h:commandButton>
         <h:outputText value="value was already modified by other user" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
     </h:form>
+    <h:form>
+        <h:outputText value="#{generateAuthorNickname.nicknameGenerationStatus}" />
+        <h:commandButton value="Suggest a nickname" disabled="#{generateAuthorNickname.nicknameGenerationRunning}" action="#{generateAuthorNickname.generateNewNickname()}">
+            <f:param name="authorId" value="#{booksForAuthor.author.id}" />
+        </h:commandButton>
+    </h:form>
     <h:link outcome="index" value="Back to home page"/>
 </h:body>
 </html>
