@@ -37,7 +37,8 @@ public class UpdateAuthorNickname implements Serializable {
         try{
             authorsDAO.update(this.author);
         } catch (OptimisticLockException e) {
-            return "/author.xhtml?faces-redirect=true&authorId=" + this.author.getId() + "&error=optimistic-lock-exception";
+            this.author.setNickname("nickname after conflict resolution");
+            authorsDAO.overwriteAfterConflict(this.author);
         }
         return "/index.xhtml";
     }
